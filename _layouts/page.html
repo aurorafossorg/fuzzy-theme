@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post">
+	<header class="post-header">
+		<div class="section no-pad-bot">
+				<div class="container" id="greetings">
+					<div class="row center">
+						<h1 class="header col s12 light">{{ page.title | escape }}</h1>
+						{%- if page.subtitle -%}
+							<p class="light grey-text">{{ page.subtitle | escape }}</p>
+						{%- endif -%}
+					</div>
+				</div>
+			</div>
+	</header>
+
+	<div class="col s12" id="cards">
+		<div class="card">
+			<div class="card-content">
+				{{ content }}
+			</div>
+		</div>
+	</div>
+</article>
