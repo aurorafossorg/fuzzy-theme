@@ -30,4 +30,5 @@
 # For more info about intellectual property visit: aurorafoss.org or
 # directly send an email to: contact (at) aurorafoss.org .
 
-function b() { bundle exec jekyll serve; }
+function b() { bundle exec jekyll build; }
+function s() { bundle exec jekyll serve; }

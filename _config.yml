@@ -18,4 +18,4 @@ markdown: kramdown
 
 theme: fuzzy-theme
 
-exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build"]
+exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build", "fuzzy-theme.gemspec", "CNAME"]
