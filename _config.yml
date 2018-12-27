@@ -19,7 +19,9 @@ markdown: kramdown
 theme: fuzzy-theme
 
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
 exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build", "fuzzy-theme.gemspec", "CNAME"]
