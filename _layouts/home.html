@@ -1,30 +1,71 @@
 ---
-layout: default
+layout: simple
 ---
 
 <div class="home">
-  {{ content }}
+	{% unless page.content_after %}
+		{{ content }}
+	{% endunless %}
 
-  {% if site.posts.size > 0 %}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.fuzzy.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {% if site.show_excerpts %}
-          {{ post.excerpt }}
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+	{% if site.posts.size > 0 %}
+	<div class="col s12" id="cards">
+			<div class="section no-pad-bot">
+					<div class="container" id="greetings">
+						<div class="row center">
+							<h4 class="header col s12 light">{{ page.list_title | default: "Posts" }}</h4>
+							{%- if page.list_subtitle -%}
+								<p class="light grey-text">{{ page.list_subtitle | escape }}</p>
+							{%- endif -%}
+						</div>
+					</div>
+				</div>
+		<ul class="post-list">
+			{% for post in site.posts %}
+			<li>
+					<div class="card grey lighten-5">
+							<div class="card-content">
+				{% assign date_format = site.fuzzy.date_format | default: "%b %-d, %Y" %}
+				<span class="card-title">
+					<a class="post-link" href="{{ post.url | relative_url }}">
+						{{ post.title | escape }}
+					</a>
+				</span>
+				{% if site.show_excerpts %}
+					{{ post.excerpt }}
+				{% endif %}
+					</div>
+					<div class="card-action">
+							<span class="post-meta">{{ post.date | date: date_format }}</span>
+							{% if site.disqus_shortname %}
+								<span class="post-meta right"><a data-disqus-identifier="{{post.url}}"></a></span>
+							{% endif %}
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {% endif %}
+		<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+		</div>
+	{% endif %}
 
+	{% if page.content_after and page.content_after==true %}
+		{{ content }}
+	{% endif %}
+	{% if site.disqus_shortname %}
+		<script type="text/javascript">
+			var disqus_shortname = "{{ site.disqus_shortname }}";
+
+			{% if jekyll.environment == "development" %}
+				var disqus_developer = 1;
+			{% endif %}
+
+			(function () {
+				var s = document.createElement('script'); s.async = true;
+				s.type = 'text/javascript';
+				s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+		</script>
+	{% endif %}
 </div>

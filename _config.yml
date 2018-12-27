@@ -6,6 +6,9 @@ description: > # this means to ignore newlines until "twitter_username:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
+# site settings
+url: https://fuzzy.aurorafoss.org
+
 # social links
 twitter: aurorafossorg
 facebook: aurorafossorg
@@ -13,6 +16,10 @@ gitlab: aurorafossorg
 github: aurorafossorg
 discord_url: https://discord.gg/Tsb2gpk
 rss: rss
+
+# post settings
+disqus_shortname: aurorafossorgfuzzy
+show_excerpts: true
 
 markdown: kramdown
 

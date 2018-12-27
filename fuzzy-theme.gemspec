@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
 	spec.name          = "fuzzy-theme"
-	spec.version       = "1.0.5"
+	spec.version       = "1.1.0"
 	spec.authors       = ["Luís Ferreira"]
 	spec.email         = ["admin@aurorafoss.org"]
 

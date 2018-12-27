@@ -1,19 +1,17 @@
 <header class="site-header" role="banner">
 	<div class="wrapper">
-		{% assign default_paths = site.pages | map: "path" %}
-		{% assign page_paths = site.header_pages | default: default_paths %}
-
-		{% if page_paths %}
 		<nav class="grey">
 			<div class="nav-wrapper">
 				<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					
 					<li><a class="page-link" href="/">Home</a></li>
-					{% for path in page_paths %}
-						{% assign my_page = site.pages | where: "path", path | first %}
-						{% if my_page.title %}
-							<li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+					{% assign sorted_pages = site.pages | sort: "order" %}
+					{% for node in sorted_pages %}
+						{% if node.title %}
+							{% unless node.nonav or node.layout=='home' %}
+								<li><a class="page-link" href="{{ node.url | relative_url }}">{{ node.title | escape }}</a></li>
+							{% endunless %}
 						{% endif %}
 					{% endfor %}
 				</ul>
@@ -23,13 +21,14 @@
 		<script>$(document).ready(function(){$('.sidenav').sidenav();});</script>
 		<ul class="sidenav" id="mobile-nav">
 			<li><a class="page-link" href="/">Home</a></li>
-			{% for path in page_paths %}
-				{% assign my_page = site.pages | where: "path", path | first %}
-				{% if my_page.title %}
-					<li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+			{% assign sorted_pages = site.pages | sort: "order" %}
+			{% for node in sorted_pages %}
+				{% if node.title %}
+					{% unless node.nonav %}
+						<li><a class="page-link" href="{{ node.url | relative_url }}">{{ node.title | escape }}</a></li>
+					{% endunless %}
 				{% endif %}
 			{% endfor %}
 		</ul>
-		{% endif %}
 	</div>
 </header>
