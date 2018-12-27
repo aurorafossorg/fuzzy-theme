@@ -6,3 +6,20 @@
     
 1.0.3
     - Improvements and bug fixes
+
+1.0.4
+    - Minor changes
+
+1.0.5
+    - Add some default jekyll plugins
+
+1.1.0
+    - Support for Disqus
+    - Total support for posts
+    - Fix page layout
+    - Add page order to the navigation bar
+    - Add nonav variable
+
+1.1.1
+    - Minor changes
+    - Update dependencies version

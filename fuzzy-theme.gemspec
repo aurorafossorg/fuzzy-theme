@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
 	spec.name          = "fuzzy-theme"
-	spec.version       = "1.1.0"
+	spec.version       = "1.1.1"
 	spec.authors       = ["Luís Ferreira"]
 	spec.email         = ["admin@aurorafoss.org"]
 
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 	end
 
 	spec.add_runtime_dependency "jekyll", "~> 3.7.4"
-	spec.add_runtime_dependency "jekyll-feed", "~> 0.10.0"
+	spec.add_runtime_dependency "jekyll-feed", "~> 0.11.0"
 	spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.5.0"
 	spec.add_runtime_dependency "jekyll-sitemap", "~> 1.2.0"
 	spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.14.0"
