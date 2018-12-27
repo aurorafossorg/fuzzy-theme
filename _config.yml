@@ -18,4 +18,8 @@ markdown: kramdown
 
 theme: fuzzy-theme
 
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+
 exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build", "fuzzy-theme.gemspec", "CNAME"]
