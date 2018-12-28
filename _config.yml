@@ -31,4 +31,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build", "fuzzy-theme.gemspec", "CNAME"]
+exclude: [vendor, "Gemfile", "Gemfile.lock", ".gitlab-ci.yml", "build", "fuzzy-theme.gemspec", "CNAME", "docs"]
